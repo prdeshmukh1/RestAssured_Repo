@@ -1,8 +1,8 @@
-#Author: Arjun
+#Author: Prashant Deshmukh
 Feature: PUT: Automated Demo Tests
   Description: PUT: The purpose of this feature is to test some demo app.
 
-  @put
+  @put @all
   Scenario Outline: PUT: Test the Demo app
     Given I want to set URL as "<URL>" for test case "<TestName>"
     When I set header content type as "<ContentType>"
@@ -13,10 +13,10 @@ Feature: PUT: Automated Demo Tests
 
     Examples: 
       | TestName  | URL          | ContentType      | RequestBody         | RequestMethod | StatusCode |
-      | Demo test | /api/users/2 | application/json | testdata/test2.json | PUT           |        201 |
+      | TC_PUT_1 | /api/users/2 | application/json | testdata/test2.json | PUT           |        201 |
 
-  @putfail
-  Scenario Outline: PUT: Test the Demo app
+  @putfail @all
+  Scenario Outline: PUT: Test the Demo app with Failing Response for Job.
     Given I want to set URL as "<URL>" for test case "<TestName>"
     When I set header content type as "<ContentType>"
     When I hit the API with requestbody "<RequestBody>" and request method is "<RequestMethod>"
@@ -26,4 +26,4 @@ Feature: PUT: Automated Demo Tests
 
     Examples: 
       | TestName  | URL          | ContentType      | RequestBody         | RequestMethod | StatusCode |
-      | Demo test | /api/users/2 | application/json | testdata/test2.json | PUT           |        201 |
+      | TC_PUT_2 | /api/users/2 | application/json | testdata/test2.json | PUT           |        201 |

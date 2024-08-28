@@ -1,8 +1,8 @@
-#Author: Arjun
+#Author: Prashant Deshmukh
 Feature: POST: Automated Demo Test
   Description: POST: The purpose of this feature is to test some demo app.
 
-  @post
+  @post @all
   Scenario Outline: POST: Test the Demo app
     Given I want to set URL as "<URL>" for test case "<TestName>"
     When I set header content type as "<ContentType>"
@@ -14,10 +14,10 @@ Feature: POST: Automated Demo Test
 
     Examples: 
       | TestName  | URL        | ContentType      | RequestBody        | RequestMethod | StatusCode |
-      | Demo test | /api/users | application/json | testdata/test.json | POST          |        201 |
+      | TC_POST_1 | /api/users | application/json | testdata/test.json | POST          |        201 |
 
-  @postfail
-  Scenario Outline: POST: Test the Demo app
+  @postfail @all
+  Scenario Outline: POST: Test the Demo app for Failing Test Case due to improper Response Job .
     Given I want to set URL as "<URL>" for test case "<TestName>"
     When I set header content type as "<ContentType>"
     When I hit the API with requestbody "<RequestBody>" and request method is "<RequestMethod>"
@@ -28,4 +28,4 @@ Feature: POST: Automated Demo Test
 
     Examples: 
       | TestName  | URL        | ContentType      | RequestBody        | RequestMethod | StatusCode |
-      | Demo test | /api/users | application/json | testdata/test.json | POST          |        201 |
+      | TC_POST_2 | /api/users | application/json | testdata/test.json | POST          |        201 |

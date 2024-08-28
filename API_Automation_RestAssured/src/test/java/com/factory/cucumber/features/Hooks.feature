@@ -1,8 +1,8 @@
-#Author: Arjun
+#Author: Prashant Deshmukh
 Feature: GET: Hooks Demo
   Description: GET: purpose of this feature is to test demo Hooks.
 
-  @hooks
+  @hooks @all
   Scenario Outline: GET: Test Hooks
     #Given I want to set URL as "<URL>" for test case "<TestName>"
     When I set header content type as "<ContentType>"
